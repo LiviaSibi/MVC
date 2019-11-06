@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Goudy Stout';
+    text-align: center;
+    color: #1611b9;
+    margin: 10px;
+}
+
+h2 {
+    font-family: 'Ghandi Sans';
+    font-weight: bold;
+}
+
+section p {
+    font-family: 'Ghandi Sans';
+}
+
+section {
+    text-align: center;
+}
+
+section h2 {
+    padding: 30px;
+}
+
+/******************************************
+                Começo- Nav
+*******************************************/
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 1.4em;
+    height: 2.3em;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav {
+    background-color: #1160b9;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: .65em 2em;
+}
+
+nav a:hover {
+    background-color: #fff;
+}
+
+/******************************************
+                Fim- Nav
+*******************************************/
+
+address p {
+    display: flex;
+    font-size: 1.1em;
+    font-family: 'Ghandi Sans';
+    justify-content: center;
+}
+
+hr {
+    padding: 10px;
+}
+
+#filmes {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+#famosos {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
