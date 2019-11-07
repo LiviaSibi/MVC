@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gandhi Sans', sans-serif; 
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Gandhi Sans' sans-serif;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-size: 2.3em;
+}
+
+section {
+    text-align: center;
+}
+
+section h2 {
+    padding: 20px 0;
+}
+
+.section-container {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 5em;
+    background-color: #000;
+}
+
+/**********************************************
+                    NAV 
+**********************************************/
+
+nav {
+    background-size: cover;
+    width: 100%;
+}
+
+nav li {
+    display: flex;
+    background-color: #ffc600;
+    justify-content: space-around;
+    margin: 0 1em;
+    align-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    font-size: 1.5em;
+    list-style-type: none;
+}
+
+nav ul > li {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul > li > a {
+    padding: 0.6em;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul > li:hover {
+    background-color: #7d0093;
+}
+
+nav ul > li > a:hover {
+    color: #fff;
+}
+
+nav #bt-mobile-menu {
+    display: none;
+}
+
+/**********************************************
+                    NAV 
+**********************************************/
+/**********************************************
+                    LOGO 
+**********************************************/
+
+#logo-area > img {
+    margin: 1em 0 1em 0;
+    width: 35%;
+}
+
+#logo-area {
+    width: 100%;
+}
+
+/**********************************************
+                    LOGO 
+**********************************************/
+/**********************************************
+                    BANNER 
+**********************************************/
+
+#banner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-image: url(/img/banner-2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+#banner img {
+    visibility: hidden;
+}
+    
+/**********************************************
+                    BANNER 
+**********************************************/
+/**********************************************
+                    SOBRE
+**********************************************/
+#sobre {
+    background-color: #000;
+}
+
+#sobre h2 {
+    color: #ffc600;
+    font-weight: bold;
+}
+
+.sobre {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+#sobre p {
+    color: #ffc600;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+}
+
+.sobre-2 {
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+.sobre img {
+    margin: 0.9em;
+}
+
+.sobre p {
+    font-size: 1.2em;
+}
+
+/**********************************************
+                    SOBRE
+**********************************************/
+/**********************************************
+                    EVENTOS
+**********************************************/
+
+#eventos {
+    background-color: #93005f;
+    margin: -0.1em;
+}
+
+#eventos p {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.eventos {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.eventos img {
+    margin: 0 1em 1em 0;
+}
+
+.eventos p {
+    font-size: 1.2em;
+}
+
+/**********************************************
+                    EVENTOS
+**********************************************/
+/**********************************************
+                    ALUGUE
+**********************************************/
+#alugue-aqui {
+    background-image: url(/img/cor.jpg);
+    text-decoration: none;
+}
+
+#alugue-aqui a {
+    text-decoration: none;
+}
+
+#alugue-aqui p {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding: 0 0 1em 0; 
+}
+
+/**********************************************
+                    ALUGUE
+**********************************************/
+/**********************************************
+                    RODAPÉ
+**********************************************/
+footer {
+    background-color: #000;
+    color: #a3a3a3;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.footer-2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    color: #7d0093;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5em 1em 0;
+}
+
+footer a:hover {
+    color: #ffc600;
+}
+
+/**********************************************
+                    RODAPÉ
+**********************************************/
+
+@media (max-width: 1200px) {
+    #banner {
+        width: 100%;
+    }
+
+    #logo-area > img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1050px) {
+    #logo-area > img {
+        width: 30%;
+    }
+
+    #logo-area {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li{
+        margin: 0;
+    }
+
+    .section-container {
+        padding: 0%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /********************************************
+                    nav - mobile
+    ********************************************/
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    #logo-area > img {
+        width: 40%;
+    }
+
+    .sobre {
+        padding: -2em 0 0 0;
+    }
+
+    #sobre img {
+        width: 30%;
+    }
+
+    .sobre-2 {
+        width: 30%;
+    }
+
+    .eventos img {
+        width: 30%;
+    }
+
+    /********************************************
+                    nav - mobile
+    ********************************************/
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 625px) {
+    #logo-area > img {
+        margin: 1em 0 1em 0;
+        width: 45%;
+    }
+
+    /********************************************
+                    nav - mobile
+    ********************************************/
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
