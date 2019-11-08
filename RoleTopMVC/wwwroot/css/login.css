@@ -1,0 +1,113 @@
+body {
+    background-color: #93005f;
+}
+
+main {
+    align-self: center;
+    width: 40%;
+    padding: 0 0 0 16em;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+h2 {
+    font-size: 1.8em;
+    padding: 1em 0 0 0;
+}
+
+.area-adm {
+    color: #ffc600;
+}
+
+form * {
+    margin: 5px 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+form input[type="email"] {
+    width: 60%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input[type="password"] {
+    width: 30%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#nome {
+    width: 60%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#telefone {
+    width: 30%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input[type="submit"] {
+    background-color: #ffc600;
+    border: 2px solid #000;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0 2em;
+    height: 2em;
+    border-radius: 4px;
+    text-align: center;
+}
+
+form input[type="submit"]:hover {
+    background-color: #7d0093;
+    color: #ffcc00;
+    border: 1px solid #7d0093;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.form-adm {
+    margin: 0.4em 0 2em 0;
+}
+
+@media (max-width:800px) {
+    main {
+        padding: 0 0 0 -12em;
+        width: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        width: 70%;
+    }
+}
+
+@media (max-width:680px) {
+    main {
+        padding: 0 0 0 6em;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 70%;
+    }
+}

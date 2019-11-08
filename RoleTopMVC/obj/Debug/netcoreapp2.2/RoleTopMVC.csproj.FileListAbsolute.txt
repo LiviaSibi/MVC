@@ -28,3 +28,4 @@ C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.dll
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
+C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Login.g.cshtml.cs
