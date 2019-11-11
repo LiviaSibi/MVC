@@ -5,7 +5,7 @@ body {
 main {
     align-self: center;
     width: 40%;
-    padding: 0 0 0 16em;
+    padding: 0 0 0 47em;
 }
 
 .flex-container {
@@ -31,7 +31,7 @@ form * {
 }
 
 form input[type="email"] {
-    width: 60%;
+    width: 55%;
     height: 25px;
     border: none;
     text-align: left;
@@ -46,8 +46,16 @@ form input[type="password"] {
     padding: 0 2px;
 }
 
+form input#data-nascimento{
+    width: 30%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
 form input#nome {
-    width: 60%;
+    width: 55%;
     height: 25px;
     border: none;
     text-align: left;
@@ -87,6 +95,26 @@ form input[type="submit"]:hover {
     margin: 0.4em 0 2em 0;
 }
 
+@media (max-width: 1400px){
+    main{
+        padding: 0 0 0 35em;
+    }
+}
+
+@media (max-width: 1150px){
+    main{
+        padding: 0 0 0 28em;
+        width: 65%;
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 0 0 18em;
+        width: 70%;
+    }
+}
+
 @media (max-width:800px) {
     main {
         padding: 0 0 0 -12em;
@@ -94,20 +122,15 @@ form input[type="submit"]:hover {
     }
 }
 
-@media (max-width: 900px) {
-    main {
-        width: 70%;
-    }
-}
-
 @media (max-width:680px) {
     main {
-        padding: 0 0 0 6em;
+        padding: 0 0 0 14em;
     }
 }
 
 @media (max-width: 600px) {
     main {
-        width: 70%;
+        padding: 0 0 0 6em;
+        width: 75%;
     }
 }
