@@ -10,6 +10,7 @@ namespace RoleTopMVC.Controllers
     {
         [HttpGet]
         public IActionResult Login (){
+            ViewData ["NomeView"] = "Cliente";
             return View();
         }
         

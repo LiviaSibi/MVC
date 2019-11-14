@@ -2,11 +2,13 @@ using System;
 using McBonaldsMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using McBonaldsMVC.Repositories;
 
 namespace McBonaldsMVC.Controllers
 {
     public class PedidoController : Controller
     {
+        PedidoRepository pedidoRepository = new PedidoRepository();
         public IActionResult Index(){
             return View();
         }
@@ -34,17 +36,13 @@ namespace McBonaldsMVC.Controllers
 
             pedido.DataDoPedido = DateTime.Now;
 
-            
+            pedido.PrecoTotal = 0.0;
+
+            pedidoRepository.Inserir(pedido);
 
             ViewData["Action"] = "Pedido";
             
-            try{
-                return View("Sucesso");
-            }
-            catch (Exception e){
-                System.Console.WriteLine(e.StackTrace);
-                return View("Erro");
-            }
+            return View("Sucesso");
         }
     }
 }

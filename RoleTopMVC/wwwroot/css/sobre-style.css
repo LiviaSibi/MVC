@@ -1,0 +1,153 @@
+main {
+    background-color: #93005f;
+}
+
+.nossa-historia {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 0 0 0 3em;
+}
+
+#nossa-historia h2 {
+    padding: 1em 0 0 0;
+}
+
+.nossa-historia p {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    text-align: left;
+    text-indent: 40px;
+}
+
+.nossa-historia img {
+    padding: 2em;
+}
+
+.espaco h2 {
+    padding: 1em 0 1em 0;
+}
+
+.espaco-1, .espaco-2 {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.dimensoes h3, .infraestrutura h3 {
+    padding: 0 0 0.5em 0;
+}
+
+.dimensoes, .infraestrutura, .mobiliario, .equipe {
+    width: 20%;
+    text-align: left;
+}
+
+.dimensoes {
+    margin: 0 -14em 0 9em;
+}
+
+.mobiliario {
+    margin: 0 -14em 0 7em;
+}
+
+.mobiliario h3, .equipe h3 {
+    padding: 1.5em 0 0.5em 0;
+}
+
+.mais-info {
+    width: 46%;
+    text-align: left;
+    text-indent: 40px;
+    margin: 2em 0 0 30em;
+}
+
+#imagens-local {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 4em 0 0;
+}
+
+.img-4 {
+    width: 35%;
+    margin: 0 -3.8em 0 0;
+}
+
+#lug-1 {
+    margin: 0 -0.3em -0.3em 0;
+}
+
+#lug-2 {
+    margin: 0 -0.1em -0.3em 0;
+}
+
+#lug-3 {
+    margin: 0 -0.3em 0 0;
+}
+
+#lug-4 {
+    margin: -0.3em 0 0 0;
+}
+
+#lug-5 {
+    margin: 0 0 0.2em 0.1em;
+}
+
+@media (max-width:1400px) {
+    .img-4 {
+        width: 50%;
+    }
+
+    .mais-info {
+        margin: 2em 0 0 25em;
+    }
+}
+
+@media (max-width:1200px) {
+    #logo-area > img {
+        width: 35%;
+    }
+
+    .img-4 {
+        width: 60%;
+    }
+
+    .mais-info {
+        margin: 2em 0 0 20em;
+    }
+}
+
+@media (max-width:1050px) {
+    .dimensoes {
+        margin: 0 2em 0 7em;
+    }
+
+    .mobiliario {
+        margin: 0 2em 0 7em;
+    }
+
+    .mais-info {
+        width: 55%;
+        margin: 2em 0 0 15em;
+    }
+
+    #lug-5 {
+        margin: 0 0 0.2em 5em;
+    }
+}
+
+@media (max-width:800px) {
+    .dimensoes, .mobiliario {
+        margin: 0 2em 0 4em;
+    }
+
+    .mais-info {
+        margin: 2em 0 0 10em;
+    }
+
+    .img-4 {
+        width: 40%;
+    }
+}
