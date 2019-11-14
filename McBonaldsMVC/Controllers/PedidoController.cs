@@ -9,7 +9,9 @@ namespace McBonaldsMVC.Controllers
     public class PedidoController : Controller
     {
         PedidoRepository pedidoRepository = new PedidoRepository();
+        HamburguerRepository hamburguerRepository = new HamburguerRepository();
         public IActionResult Index(){
+            var hamburgueres = hamburguerRepository.ObterTodos();
             return View();
         }
         public IActionResult Registrar(IFormCollection form){
