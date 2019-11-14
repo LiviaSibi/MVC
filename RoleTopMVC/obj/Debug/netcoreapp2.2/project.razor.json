@@ -2956,7 +2956,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "RoleTopMVC",
   "Documents": [
@@ -2983,6 +2983,11 @@
     {
       "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Agendamento\\Index.cshtml",
+      "TargetPath": "Views\\Agendamento\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -16,7 +16,6 @@ C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.RazorCoreGenerate.cache
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
@@ -29,3 +28,6 @@ C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Login.g.cshtml.cs
+C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Agenda\Index.g.cshtml.cs
+C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs
+C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs

@@ -1,0 +1,86 @@
+<main>
+    <h2>Cadastre seu Evento</h2>
+    <form method="POST" action="index.html">
+        <div >
+            <label for="data">Data</label>
+            <br>
+            <input id="data" type="date" name="data-do-evento">
+        </div>
+
+        <div>
+            <label for="hora">Horário</label>
+            <br>
+            <input id="hora" type="time" name="horario">
+        </div>
+
+        <div class="double-field">
+            <div>
+                <label for="tipo-evento">Tipo de Evento</label>
+                <br>
+                <select id="tipo-evento" name="tipo-evento" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="privado">Privado</option>
+                    <option value="publico">Público</option>
+                </select>
+            </div>
+            <div>
+                <label for="evento">Evento</label>
+                <br>
+                <select id="evento" name="evento">
+                    <option value="" disabled selected>Selecione</option>
+                    <option>Casamento</option>
+                    <option>Formatura</option>
+                    <option>Aniversário/Debutante</option>
+                    <option>Festas</option>
+                    <option>Corporativo</option>
+                    <option>Show</option>
+                </select>
+            </div>
+            <div>
+                <label for="pf-pj">Pessoa física ou jurídica</label>
+                <br>
+                <select id="pf-pj" name="pf-pj" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="privado">Pessoa Física</option>
+                    <option value="publico">Pessoa Jurídica</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="cpf">CPF ou CNPJ</label>
+            <br>
+            <input id="cpf" type="text" placeholder="Ex:123-456-789-0" name="cpf">
+        </div>
+
+        <div>
+            <label for="descricao">Descrição do Evento</label>
+            <br>
+            <textarea cols="60" rows="7" placeholder="Ex: número de convidados, atrações, descrição do evento, etc." name="descricao"></textarea>
+        </div>
+
+        <div class="box-servicos">
+            <label for="servicos">Serviços a disposição (opcional)</label>
+            <br>
+            <input id="servicos-som" type="checkbox">Som<br>
+            <input id="servicos-luz" type="checkbox">Iluminação<br>
+        </div>
+
+        <div>
+            <label for="pagamento">Forma de pagamento</label>
+            <br>
+            <input id="pagamento" type="text" name="pagamento">
+        </div>
+
+        <div>
+            <input id="total" type="text" placeholder="*Total" disabled name="total">
+        </div>
+
+        <div>
+            <input id="servicos-condicoes" type="checkbox">Concordo e aceito os serviços e condições da empresa (Ler)<br>
+        </div>
+
+        <p><a href="">Imprimir Boleto</a></p>
+        <input type="submit" value="Alugar">
+    </form>
+</main>
