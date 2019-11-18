@@ -19,6 +19,11 @@
         {
             <link href="/css/sobre-style.css" rel="stylesheet" type="text/css">
         }
+
+        @if("Eventos".Equals(nomeView))
+        {
+            <link href="/css/eventos-style.css" rel="stylesheet" type="text/css">
+        }
     </head>
     <body>
         <header>
@@ -37,7 +42,7 @@
                         </li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active">Home</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Sobre" asp-action="Index">Sobre</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="eventos.html">Eventos</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Evento" asp-action="Index">Eventos</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="contato.html">Contato</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
                     </ul>

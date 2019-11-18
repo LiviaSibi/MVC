@@ -1,0 +1,15 @@
+main {
+    background-color: #93005f;
+}
+
+#fotos-eventos {
+    padding: 3em;
+}
+
+#fotos-eventos img {
+    padding: 1em 0.5em 2em 0;
+}
+
+#fotos-eventos h2 {
+    padding: 0 0 1em 0;
+}

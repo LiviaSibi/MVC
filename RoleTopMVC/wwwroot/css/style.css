@@ -4,7 +4,11 @@
 }
 
 body {
-    font-family: 'Gandhi Sans', sans-serif; 
+    font-family: 'Gandhi Sans', sans-serif;
+}
+
+#sucesso-erro {
+    padding: 16em;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -21,6 +25,7 @@ h2 {
 
 section {
     text-align: center;
+    background-color: #93005f;
 }
 
 section h2 {
