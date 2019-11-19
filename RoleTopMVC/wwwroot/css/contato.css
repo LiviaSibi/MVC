@@ -1,0 +1,100 @@
+body {
+    background-color: #93005f;
+}
+
+.icone-contato {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.2em;
+    margin: 0 0 0 36em;
+}
+
+.icone-contato p {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.icone-contato img {
+    margin: 0.9em;
+}
+
+#alugar p {
+    font-size: 2.0em;
+    padding: 1em 0 1em 0;
+}
+
+#alugar input[type="submit"] {
+    background-color: #ffc600;
+    border: 3px solid #7d0093;
+    color: #7d0093;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 0 2.5em;
+    height: 2.5em;
+    border-radius: 18px;
+    text-align: center;
+    margin: 0 0 2em 0;
+}
+
+#alugar input[type="submit"]:hover {
+    background-color: #7d0093;
+    color: #ffc600;
+    border: 2px solid #ffc600;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#mapa {
+    margin: 0 0 2em 0;
+}
+
+@media (max-width:1700px) {
+    .icone-contato {
+        margin: 0 0 0 30em;
+    }
+}
+
+@media (max-width:1600px) {
+    .icone-contato {
+        margin: 0 0 0 26em;
+    }
+}
+
+@media (max-width:1200px) {
+    .icone-contato {
+        margin: 0 0 0 18em;
+    }
+}
+
+@media (max-width:950px) {
+    .icone-contato {
+        margin: 0 0 0 12em;
+    }
+}
+
+@media (max-width:750px) {
+    .icone-contato {
+        margin: 0 0 0 9em;
+    }
+}
+
+@media (max-width:670px) {
+    .icone-contato {
+        margin: 0 0 0 6em;
+    }
+}
+
+@media (max-width:500px) {
+    .icone-contato {
+        margin: 0 0 0 2em;
+    }
+}
+
+@media (max-width:400px) {
+    .icone-contato {
+        margin: 0 0 0 1em;
+    }
+}

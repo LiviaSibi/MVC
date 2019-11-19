@@ -2971,6 +2971,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Evento\\Index.cshtml",
+      "TargetPath": "Views\\Evento\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\Erro.cshtml",
       "TargetPath": "Views\\Shared\\Erro.cshtml",
       "FileKind": "mvc"
@@ -3006,6 +3011,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Contato\\Index.cshtml",
+      "TargetPath": "Views\\Contato\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\Sucesso.cshtml",
       "TargetPath": "Views\\Shared\\Sucesso.cshtml",
       "FileKind": "mvc"
@@ -3018,11 +3028,6 @@
     {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Eventos\\Index.cshtml",
-      "TargetPath": "Views\\Eventos\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],
