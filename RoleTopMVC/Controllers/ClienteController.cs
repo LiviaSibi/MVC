@@ -1,8 +1,9 @@
 using System;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Models;
+using RoleTopMVC.ViewModels;
 using RoleTopMVC.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace RoleTopMVC.Controllers
 {
@@ -23,7 +24,21 @@ namespace RoleTopMVC.Controllers
                 System.Console.WriteLine(form["email"]);
                 System.Console.WriteLine(form["senha"]);
                 System.Console.WriteLine("======================");
-                return View("Sucesso");
+                var usuario = form["email"];
+                var senha = form["senha"];
+
+                var cliente = clienteRepository.ObterPor(usuario);
+                if(cliente != null){
+                    if(cliente.Senha.Equals(senha)){
+                        return RedirectToAction("Historico", "Cliente");
+                    }
+                    else{
+                        return View("Erro", new RespostaViewModel("Senha Incorreta"));
+                    }
+                }
+                else{
+                    return View("Erro", new RespostaViewModel($"Usuário {usuario} não foi encontrado"));
+                }
             }
 
             catch(Exception e){

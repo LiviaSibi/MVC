@@ -65,3 +65,4 @@ C:\Users\52850852848\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonald
 C:\Users\52850852848\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonaldsMVC.pdb
 C:\Users\52850852848\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonaldsMVC.csproj.CopyComplete
 C:\Users\52850852848\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Pedido\Index.g.cshtml.cs
+C:\Users\52850852848\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Historico.g.cshtml.cs

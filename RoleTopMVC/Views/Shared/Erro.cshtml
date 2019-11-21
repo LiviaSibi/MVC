@@ -1,5 +1,7 @@
+@model RoleTopMVC.ViewModels.RespostaViewModel
 <main>
     <section id="sucesso-erro">
-        <h2>@ViewData["Action"] houve falha no processo</h2>
+        <h2>Houve falha no @ViewData["Action"]</h2>
+        <p>@Model.Mensagem</p>
     </section>
 </main>

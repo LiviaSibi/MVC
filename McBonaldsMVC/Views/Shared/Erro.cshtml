@@ -1,3 +1,5 @@
+@model McBonaldsMVC.ViewModels.RespostaViewModel
 <main>
-    <h2>Ocorreu uma falha no processo <br> @ViewData["Action"] Inválido! </h2>
+    <h2>Ocorreu uma falha no @ViewData["Action"]</h2>
+    <p>@Model.Mensagem</p>
 </main>
