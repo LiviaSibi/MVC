@@ -4,7 +4,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : RepositoryBase
     {
         private const string PATH = "Database/Cliente.csv";
         public ClienteRepository(){
@@ -40,22 +40,6 @@ namespace RoleTopMVC.Repositories
             return $"nome={cliente.Nome};email={cliente.Email};data_nascimento={cliente.DataNascimento};telefone={cliente.Telefone};senha={cliente.Senha}";
         }
 
-        public string ExtrairValorDoCampo(string nomeCampo, string linha){
-            var chave = nomeCampo;
-            var indiceChave = linha.IndexOf(chave);
-
-            var indiceTerminal = linha.IndexOf(";", indiceChave);
-            var valor = "";
-
-            if(indiceTerminal != -1){
-                valor = linha.Substring(indiceChave, indiceTerminal - indiceChave);
-            }
-            else{
-                valor = linha.Substring(indiceChave);
-            }
-
-            System.Console.WriteLine($"Campo {nomeCampo} tem valor {valor}");
-            return valor.Replace(nomeCampo + "=", "");
-        }
+        
     }
 }

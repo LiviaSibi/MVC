@@ -1,11 +1,14 @@
 using System;
-using Microsoft.AspNetCore.Http;
+using RoleTopMVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace RoleTopMVC.Controllers
 {
     public class AgendaController : Controller
     {
+        AgendaRepository agendaRepository = new AgendaRepository();
+
         [HttpGet]
         public IActionResult Index()
         {

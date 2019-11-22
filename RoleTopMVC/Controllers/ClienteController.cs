@@ -9,13 +9,14 @@ namespace RoleTopMVC.Controllers
 {
     public class ClienteController : Controller
     {
-        [HttpGet]
+        private const string SESSION_CLIENTE_EMAIL = "email_cliente";
+        private ClienteRepository clienteRepository = new ClienteRepository();
+        private AgendaRepository agendaRepository = new AgendaRepository();
+        
         public IActionResult Login (){
             ViewData ["NomeView"] = "Cliente";
             return View();
         }
-        
-        [HttpPost]
 
         public IActionResult Login(IFormCollection form){
             ViewData ["Action"] = "Login";
@@ -30,6 +31,8 @@ namespace RoleTopMVC.Controllers
                 var cliente = clienteRepository.ObterPor(usuario);
                 if(cliente != null){
                     if(cliente.Senha.Equals(senha)){
+                        HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
+                        HttpContext.Session.SetString("SESSION_CLIENTE_NOME", cliente.Nome);
                         return RedirectToAction("Historico", "Cliente");
                     }
                     else{
@@ -46,8 +49,14 @@ namespace RoleTopMVC.Controllers
                 return View("Erro");
             } 
         }
+        public IActionResult Historico(){
+            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            var agendar = agendaRepository.ObterTodosPorCliente(emailCliente);
 
-        ClienteRepository clienteRepository = new ClienteRepository();
+            return View(new HistoricoViewModels(){
+                Agendar = agendar
+            });
+        }
         public IActionResult CadastrarCliente(IFormCollection form){
             ViewData ["Action"] = "Cadastro";
             try{

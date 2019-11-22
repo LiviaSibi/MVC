@@ -8,6 +8,7 @@ namespace RoleTopMVC.Models
 
         public DateTime DataDoEvento {get; set;}
 
-        
+        public string CPF {get; set;}
+        public string Descricao {get; set;}
     }
 }

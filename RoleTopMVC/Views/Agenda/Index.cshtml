@@ -1,6 +1,6 @@
 <main>
     <h2>Cadastre seu Evento</h2>
-    <form method="POST" action="index.html">
+    <form method="POST" action='@Url.Action("Agendar", "Agenda")'>
         <div >
             <label for="data">Data</label>
             <br>
@@ -73,7 +73,7 @@
         </div>
 
         <div>
-            <input id="total" type="text" placeholder="*Total" disabled name="total">
+            <input id="total" type="text" placeholder="*Total" name="total" disabled>
         </div>
 
         <div>
