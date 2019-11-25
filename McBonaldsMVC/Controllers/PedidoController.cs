@@ -32,7 +32,9 @@ namespace McBonaldsMVC.Controllers
             if(clienteLogado != null){
                 pedido.Cliente = clienteLogado;
             }
-
+            pedido.NomeView = "Pedido";
+            pedido.UsuarioEmail = ObterUsuarioSession();
+            pedido.UsuarioNome = ObterUsuarioNomeSession();
             return View(pedido);
         }
 
@@ -58,11 +60,22 @@ namespace McBonaldsMVC.Controllers
 
             pedido.PrecoTotal = hamburguer.Preco + shake.Preco;
 
-            pedidoRepository.Inserir(pedido);
-
-            ViewData["Action"] = "Pedido";
-            
-            return View("Sucesso");
+            if(pedidoRepository.Inserir(pedido)){
+                return View("Sucesso", new RespostaViewModel(){
+                    Mensagem = "Aguarde a aprovação dos nossos administradores",
+                    NomeView = "Sucesso",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            else{
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao processar seu pedido. Tente novamente",
+                    NomeView = "Erro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
         }
     }
 }

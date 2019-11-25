@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace McBonaldsMVC.ViewModels
 {
-    public class PedidoViewModel
+    public class PedidoViewModel : BaseViewModel
     {
         public List<Hamburguer> Hamburgueres {get; set;}
         public List<Shake> Shakes {get; set;}
@@ -13,8 +13,8 @@ namespace McBonaldsMVC.ViewModels
         public PedidoViewModel(){
             this.Hamburgueres = new List<Hamburguer>();
             this.Shakes = new List<Shake>();
-            this.NomeUsuario = "Jovem";
             this.Cliente = new Cliente();
+            this.NomeUsuario = "Jovem";
         }
     }
 }

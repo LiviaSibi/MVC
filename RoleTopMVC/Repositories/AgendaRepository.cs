@@ -53,7 +53,7 @@ namespace RoleTopMVC.Repositories
 
         private string PrepararRegistroCSV(Agenda agenda){
             Cliente cliente = agenda.Cliente;
-            return $"cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_evento={agenda.DataDoEvento};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao}";
+            return $"cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_evento={agenda.DataDoEvento};tipo_evento={agenda.Tipo};evento={agenda.Evento};tipo_pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento}";
         }
     }
 }

@@ -7,18 +7,19 @@ using Microsoft.AspNetCore.Http;
 
 namespace RoleTopMVC.Controllers
 {
-    public class ClienteController : Controller
+    public class ClienteController : AbstractController
     {
-        private const string SESSION_CLIENTE_EMAIL = "email_cliente";
         private ClienteRepository clienteRepository = new ClienteRepository();
         private AgendaRepository agendaRepository = new AgendaRepository();
         
+        [HttpGet]
         public IActionResult Login (){
             ViewData ["NomeView"] = "Cliente";
             return View();
         }
 
-        public IActionResult Login(IFormCollection form){
+        [HttpPost]
+        public IActionResult Login (IFormCollection form){
             ViewData ["Action"] = "Login";
             try{
                 System.Console.WriteLine("======================");
@@ -32,7 +33,7 @@ namespace RoleTopMVC.Controllers
                 if(cliente != null){
                     if(cliente.Senha.Equals(senha)){
                         HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
-                        HttpContext.Session.SetString("SESSION_CLIENTE_NOME", cliente.Nome);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
                         return RedirectToAction("Historico", "Cliente");
                     }
                     else{
@@ -50,7 +51,7 @@ namespace RoleTopMVC.Controllers
             } 
         }
         public IActionResult Historico(){
-            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            var emailCliente = ObterUsuarioSession();
             var agendar = agendaRepository.ObterTodosPorCliente(emailCliente);
 
             return View(new HistoricoViewModels(){
