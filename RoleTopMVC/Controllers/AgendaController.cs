@@ -22,6 +22,9 @@ namespace RoleTopMVC.Controllers
             if(clienteLogado != null){
                 agenda.Cliente = clienteLogado;
             }
+            agenda.NomeView = "Agendamento";
+            agenda.UsuarioEmail = ObterUsuarioSession();
+            agenda.UsuarioNome = ObterUsuarioNomeSession();
             return View(agenda);
         }
 
@@ -38,7 +41,22 @@ namespace RoleTopMVC.Controllers
             agendaRepository.Inserir(agenda);
 
             ViewData["Action"] = "Agendamento";
-            return View("Sucesso");
+            if(agendaRepository.Inserir(agenda)){
+                return View("Sucesso", new RespostaViewModel(){
+                    Mensagem = "Aguarde a aprovação dos nossos administradores",
+                    NomeView = "Sucesso",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            else{
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao processar o agendamento. Tente novamente.",
+                    NomeView = "Erro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
             
         }
     }

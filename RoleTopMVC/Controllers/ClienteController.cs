@@ -15,7 +15,11 @@ namespace RoleTopMVC.Controllers
         [HttpGet]
         public IActionResult Login (){
             ViewData ["NomeView"] = "Cliente";
-            return View();
+            return View(new BaseViewModel(){
+                NomeView = "Login",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
         [HttpPost]
@@ -55,7 +59,10 @@ namespace RoleTopMVC.Controllers
             var agendar = agendaRepository.ObterTodosPorCliente(emailCliente);
 
             return View(new HistoricoViewModels(){
-                Agendar = agendar
+                Agendar = agendar,
+                NomeView = "Histórico",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
             });
         }
         public IActionResult CadastrarCliente(IFormCollection form){

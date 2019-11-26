@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RoleTopMVC.ViewModels
 {
-    public class HistoricoViewModels
+    public class HistoricoViewModels : BaseViewModel
     {
         public List<Agenda> Agendar {get; set;}
     }

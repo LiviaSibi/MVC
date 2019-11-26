@@ -2,7 +2,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.ViewModels
 {
-    public class AgendaViewModel
+    public class AgendaViewModel : BaseViewModel
     {
         public Cliente Cliente {get; set;}
         public Agenda Agenda {get; set;}
