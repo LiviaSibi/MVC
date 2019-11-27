@@ -14,9 +14,8 @@ namespace RoleTopMVC.Controllers
         
         [HttpGet]
         public IActionResult Login (){
-            ViewData ["NomeView"] = "Cliente";
             return View(new BaseViewModel(){
-                NomeView = "Login",
+                NomeView = "Cliente",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
             });
@@ -64,6 +63,12 @@ namespace RoleTopMVC.Controllers
                 UsuarioNome = ObterUsuarioNomeSession(),
                 UsuarioEmail = ObterUsuarioSession()
             });
+        }
+        public IActionResult Logoff(){
+            HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+            HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult CadastrarCliente(IFormCollection form){
             ViewData ["Action"] = "Cadastro";

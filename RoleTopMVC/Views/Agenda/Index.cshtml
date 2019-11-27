@@ -19,8 +19,8 @@
                 <br>
                 <select id="tipo-evento" name="tipo-evento" required>
                     <option value="" disabled selected>Selecione</option>
-                    <option value="privado">Privado</option>
-                    <option value="publico">Público</option>
+                    <option>Privado</option>
+                    <option>Público</option>
                 </select>
             </div>
             <div>
@@ -41,8 +41,8 @@
                 <br>
                 <select id="pf-pj" name="pf-pj" required>
                     <option value="" disabled selected>Selecione</option>
-                    <option value="privado">Pessoa Física</option>
-                    <option value="publico">Pessoa Jurídica</option>
+                    <option>Pessoa Física</option>
+                    <option>Pessoa Jurídica</option>
                 </select>
             </div>
         </div>
@@ -60,10 +60,10 @@
         </div>
 
         <div class="box-servicos">
-            <label for="servicos">Serviços a disposição (opcional)</label>
+            <label id="servicos" for="servicos">Serviços a disposição (opcional)</label>
             <br>
-            <input id="servicos-som" type="checkbox" name="som">Som<br>
-            <input id="servicos-luz" type="checkbox" name="luz">Iluminação<br>
+            <input id="servicos-som" type="checkbox" value="som" name="servicos">Som<br>
+            <input id="servicos-luz" type="checkbox" value="iluminação" name="servicos">Iluminação<br>
         </div>
 
         <div>

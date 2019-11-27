@@ -29,19 +29,22 @@ namespace RoleTopMVC.Controllers
         }
 
         public IActionResult Agendar(IFormCollection form){
-            Agenda agenda = new Agenda();
+            Agendamento agendamento = new Agendamento();
+
+            Agenda agenda = new Agenda (DateTime.Parse(form["data-do-evento"]+" "+form["horario"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["sevicos"], form["pagamento"]);
+            agendamento.Agenda = agenda;
 
             Cliente cliente = new Cliente(){
                 Nome = form["nome"],
                 Telefone = form["telefone"],
                 Email = form["email"]
             };
-            agenda.Cliente = cliente;
-            agenda.DataDoEvento = DateTime.Now;
-            agendaRepository.Inserir(agenda);
+
+            agendamento.Cliente = cliente;
+            agendamento.DataDoEvento = DateTime.Now;
 
             ViewData["Action"] = "Agendamento";
-            if(agendaRepository.Inserir(agenda)){
+            if(agendaRepository.Inserir(agendamento)){
                 return View("Sucesso", new RespostaViewModel(){
                     Mensagem = "Aguarde a aprovação dos nossos administradores",
                     NomeView = "Sucesso",
@@ -57,7 +60,6 @@ namespace RoleTopMVC.Controllers
                     UsuarioNome = ObterUsuarioNomeSession()
                 });
             }
-            
         }
     }
 }

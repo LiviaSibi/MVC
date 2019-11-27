@@ -1,0 +1,115 @@
+body {
+    background-color: #93005f;
+}
+
+main {
+    width: 80%;
+    padding: 0 0 3em 8em;
+}
+
+#painel {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    padding: 0.5em 0;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+.box-status-aluguel {
+    width: 24%;
+    padding-top: 1em;
+    padding: 1em 0 2em 0;
+    text-align: center;
+}
+
+.box-status-aluguel > p {
+    font-size: 2em;
+    padding: 0.5em 0 0 0;
+}
+
+.box-status-aluguel.reprovados {
+    background-color: #FF4600;
+}
+
+.box-status-aluguel.aprovados {
+    background-color: #169300;
+}
+
+.box-status-aluguel.pendentes {
+    background-color: #FFD133;
+}
+
+.box-status-aluguel.feitos {
+    background-color: #A800C6;
+    border-right: 1px solid #000;
+}
+
+.box-status-aluguel.a-serem-feitos {
+    background-color: #A800C6;
+    border-left: 1px solid #000;
+}
+
+table {
+    text-align: left;
+    color: #000;
+    border: 2px solid #000;
+    width: 100%;
+    padding: 2px;
+    word-break: normal;
+}
+
+table th {
+    background-color:#ffc600;
+}
+
+table a {
+    text-decoration: none;
+    color: #ffc600;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+tfoot td {
+    text-align: center;
+    background-color: #A800C6;
+
+}
+
+@media (max-width:800px) {
+    h4 {
+        font-size: 1.3em;
+    }
+
+    main {
+        padding: 0 0 3em 5em;
+    }
+}
+
+@media (max-width: 625px) {
+    main {
+        width: 90%;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+
+}
