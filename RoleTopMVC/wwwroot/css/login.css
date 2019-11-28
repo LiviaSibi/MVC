@@ -20,6 +20,28 @@ h2 {
     padding: 1em 0 0 0;
 }
 
+table {
+    text-align: left;
+    color: #000;
+    border: 2px solid #000;
+    width: 100%;
+    padding: 2px;
+    word-break: normal;
+}
+
+table th {
+    background-color:#ffc600;
+}
+
+table a {
+    text-decoration: none;
+    color: #ffc600;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
 .area-adm {
     color: #ffc600;
 }
@@ -91,8 +113,90 @@ form input[type="submit"]:hover {
     font-weight: bolder;
 }
 
+form input#data {
+    height: 27px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#hora {
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#tipo-evento {
+    height: 40px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#evento {
+    height: 28px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#pf-pj {
+    height: 28px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#cpf {
+    width: 30%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+select {
+    width: 20%;
+    height: 28px;
+}
+
+.box-servicos {
+    background-color: #fff;
+    width: 33%;
+    padding: 2px 4px;
+}
+
+.box-servicos label {
+    border-bottom: 2px solid #000;
+}
+
+form input#pagamento {
+    width: 33%;
+    height: 25px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
+form input#total{
+    width: 33%;
+    height: 25px;
+    color: #000;
+}
+
+form input#servicos-condicoes {
+    margin: 1em 1em 0 0;
+    text-align: center;
+}
+
 .form-adm {
     margin: 0.4em 0 2em 0;
+}
+
+form a {
+    color: rgb(39, 39, 202);
+    font-size: 1.2em;
 }
 
 @media (max-width: 1400px){
@@ -132,5 +236,8 @@ form input[type="submit"]:hover {
     main {
         padding: 0 0 0 6em;
         width: 75%;
+    }
+    select{
+        width: 25%;
     }
 }

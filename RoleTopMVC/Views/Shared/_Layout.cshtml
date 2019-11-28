@@ -12,12 +12,10 @@
         {
             <link href="/css/login.css" rel="stylesheet" type="text/css">
         }
-
         @if("Administrador".Equals(@Model.NomeView))
         {
             <link href="css/adm.css" rel="stylesheet" type="text/css">
         }
-
         @if("Sobre".Equals(@Model.NomeView))
         {
             <link href="/css/sobre-style.css" rel="stylesheet" type="text/css">
@@ -32,6 +30,19 @@
         {
             <link href="css/contato.css" rel="stylesheet" type="text/css">
         }
+
+        @if("Agenda".Equals(@Model.NomeView))
+        {
+            <link href="/css/login.css" rel="stylesheet" type="text/css">
+            <link href="css/cadastro-evento.css" rel="stylesheet" type="text/css">
+        }
+
+        @if("Histórico".Equals(@Model.NomeView))
+        {
+            <link href="/css/login.css" rel="stylesheet" type="text/css">
+            <link href="css/adm.css" rel="stylesheet" type="text/css">
+        }
+        
     </head>
     <body>
         <header>

@@ -22,7 +22,7 @@ namespace RoleTopMVC.Controllers
             if(clienteLogado != null){
                 agenda.Cliente = clienteLogado;
             }
-            agenda.NomeView = "Agendamento";
+            agenda.NomeView = "Agenda";
             agenda.UsuarioEmail = ObterUsuarioSession();
             agenda.UsuarioNome = ObterUsuarioNomeSession();
             return View(agenda);

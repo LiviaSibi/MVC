@@ -1,6 +1,24 @@
 <main>
     <h2>Cadastre seu Evento</h2>
     <form method="POST" action='@Url.Action("Agendar", "Agenda")'>
+        <div>
+            <label for="nome">Nome Completo</label>
+            <br>
+            <input id="nome" type="text" maxlength="30" minlength="3" name="nome">
+        </div>
+
+        <div>
+            <label for="email">E-mail</label>
+            <br>
+            <input id="email" type="email" name="email">
+        </div>
+
+        <div>
+            <label for="telefone">Telefone</label>
+            <br>
+            <input id="telefone" type="text" placeholder="11 1234-5678" maxlength="12" minlength="10" name="telefone">
+        </div>
+
         <div >
             <label for="data">Data</label>
             <br>
@@ -73,7 +91,7 @@
         </div>
 
         <div>
-            <input id="total" type="text" placeholder="*Total" name="total" disabled>
+            <input id="total" type="text" placeholder="Total: R$10.000" name="total" disabled>
         </div>
 
         <div>
