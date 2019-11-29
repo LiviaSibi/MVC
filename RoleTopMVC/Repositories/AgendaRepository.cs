@@ -16,6 +16,8 @@ namespace RoleTopMVC.Repositories
         }
 
         public bool Inserir (Agendamento agendamento){
+            var quantidadeLinhas = File.ReadAllLines(PATH).Length;
+            agendamento.Id = (ulong) ++quantidadeLinhas;
             var linha = new string[] {PrepararRegistroCSV(agendamento)};
             File.AppendAllLines(PATH, linha);
             return true;
@@ -28,6 +30,7 @@ namespace RoleTopMVC.Repositories
             foreach(var linha in linhas){
                 Agendamento agenda = new Agendamento();
                 
+                agenda.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
                 agenda.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 agenda.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 agenda.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -39,6 +42,7 @@ namespace RoleTopMVC.Repositories
                 agenda.Agenda.Descricao = ExtrairValorDoCampo("descricao_evento", linha);
                 agenda.Agenda.Servicos = ExtrairValorDoCampo("servicos", linha);
                 agenda.Agenda.Pagamento = ExtrairValorDoCampo("forma_pagamento", linha);
+                agenda.Status = uint.Parse(ExtrairValorDoCampo("status_agendamento", linha));
 
                 agendas.Add(agenda);
             }
@@ -56,10 +60,43 @@ namespace RoleTopMVC.Repositories
             return agendarCliente;
         }
 
+        public Agendamento ObterPor(ulong id){
+            var agendamentosTotais = ObterTodos();
+            foreach(var agenda in agendamentosTotais){
+                if(agenda.Id == id){
+                    return agenda;
+                }
+            }
+            return null;
+        }
+
+        public bool Atualizar(Agendamento agendamento){
+            var agendamentosTotais = File.ReadAllLines(PATH);
+            var agendaCSV = PrepararRegistroCSV(agendamento);
+            var linhaAgenda = -1;
+            var resultado = false;
+
+            for(int i=0; i<agendamentosTotais.Length; i++){
+                var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", agendamentosTotais[i]));
+                if(agendamento.Id.Equals(idConvertido)){
+                    linhaAgenda = i;
+                    resultado = true;
+                    break;
+                }
+            }
+
+            if(resultado){
+                agendamentosTotais[linhaAgenda] = agendaCSV;
+                File.WriteAllLines(PATH, agendamentosTotais);
+            }
+
+            return resultado;
+        }
+
         private string PrepararRegistroCSV(Agendamento agendamento){
             Cliente cliente = agendamento.Cliente;
             Agenda agenda = agendamento.Agenda;
-            return $"cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_evento={agenda.DataDoEvento};tipo_evento={agenda.Tipo};evento={agenda.Evento};tipo_pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento}";
+            return $"id={agendamento.Id};cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_evento={agenda.DataDoEvento};tipo_evento={agenda.Tipo};evento={agenda.Evento};tipo_pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento};status_agendamento={agendamento.Status}";
         }
     }
 }

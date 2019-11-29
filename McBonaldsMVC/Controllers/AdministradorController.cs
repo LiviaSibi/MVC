@@ -11,29 +11,36 @@ namespace McBonaldsMVC.Controllers
 
         [HttpGet]
         public IActionResult DashBoard(){
-            var pedidos = pedidoRepository.ObterTodos();
-            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            var tipoUsusarioSessao = uint.Parse(ObterUsuarioTipoSession());
+            if(tipoUsusarioSessao.Equals((uint) TiposUsuario.ADMINISTRADOR)){
+                var pedidos = pedidoRepository.ObterTodos();
+                DashboardViewModel dashboardViewModel = new DashboardViewModel();
 
-            foreach(var pedido in pedidos){
-                switch (pedido.Status){
-                    case (uint) StatusPedido.REPROVADO:
-                        dashboardViewModel.PedidosReprovados++;
-                        break;
+                foreach(var pedido in pedidos){
+                    switch (pedido.Status){
+                        case (uint) StatusPedido.REPROVADO:
+                            dashboardViewModel.PedidosReprovados++;
+                            break;
 
-                    case (uint) StatusPedido.APROVADO:
-                        dashboardViewModel.PedidosAprovados++;
-                        break;
+                        case (uint) StatusPedido.APROVADO:
+                            dashboardViewModel.PedidosAprovados++;
+                            break;
 
-                    default:
-                        dashboardViewModel.PedidosPendentes++;
-                        dashboardViewModel.Pedidos.Add(pedido);
-                        break;
+                        default:
+                            dashboardViewModel.PedidosPendentes++;
+                            dashboardViewModel.Pedidos.Add(pedido);
+                            break;
+                    }
                 }
-            }
-            dashboardViewModel.NomeView = "Dashboard";
-            dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
+                dashboardViewModel.NomeView = "Dashboard";
+                dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
 
-            return View(dashboardViewModel);
+                return View(dashboardViewModel);
+            }
+            return View("Erro", new RespostaViewModel(){
+                NomeView = "Dashboard",
+                Mensagem = "Você não pode acessar essa parte do site."
+            });
         }
     }
 }

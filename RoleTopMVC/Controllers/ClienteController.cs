@@ -82,12 +82,12 @@ namespace RoleTopMVC.Controllers
                 
                 clienteRepository.Inserir(cliente);
 
-                return View("Sucesso");
+                return View("Sucesso", new RespostaViewModel(" "));
             }
 
-            catch (Exception e){
+            catch(Exception e){
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro");
+                return View("Erro", new RespostaViewModel(" "));
             }
         }
     }

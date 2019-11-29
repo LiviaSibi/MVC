@@ -9,9 +9,9 @@
     <table>
         <thead>
             <tr>
-                <th>Data</th>
-                <th>Evento</th>
+                <th>Data e Hora</th>
                 <th>Tipo de evento</th>
+                <th>Evento</th>
                 <th>Descrição</th>
                 <th>Serviços</th>
             </tr>
@@ -20,11 +20,11 @@
             @foreach(var evento in Model.Agendar) {
                 <tr>
                     <td>@evento.DataDoEvento</td>
-                    <td>@evento.Agenda.Evento</td>
                     <td>@evento.Agenda.Tipo</td>
+                    <td>@evento.Agenda.Evento</td>
                     <td>@evento.Agenda.Descricao</td>
                     <td>@evento.Agenda.Servicos</td>
-                </tr>
+                </tr> 
             }
         </tbody>
     </table>

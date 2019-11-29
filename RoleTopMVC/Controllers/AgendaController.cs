@@ -31,7 +31,7 @@ namespace RoleTopMVC.Controllers
         public IActionResult Agendar(IFormCollection form){
             Agendamento agendamento = new Agendamento();
 
-            Agenda agenda = new Agenda (DateTime.Parse(form["data-do-evento"]+" "+form["horario"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["sevicos"], form["pagamento"]);
+            Agenda agenda = new Agenda (DateTime.Parse(form["data"]+" "+form["horario"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["sevicos"], form["pagamento"]);
             agendamento.Agenda = agenda;
 
             Cliente cliente = new Cliente(){
@@ -56,6 +56,40 @@ namespace RoleTopMVC.Controllers
                 return View("Erro", new RespostaViewModel(){
                     Mensagem = "Houve um erro ao processar o agendamento. Tente novamente.",
                     NomeView = "Erro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        }
+
+        public IActionResult Aprovar(ulong id){
+            Agenda agenda = agendaRepository.ObterPor(id);
+            agenda.Status = (uint) StatusAgenda.APROVADO;
+
+            if(agendaRepository.Atualizar(agenda)){
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else{
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao aprovar pedido.",
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        }
+
+        public IActionResult Reprovar(ulong id){
+            Agenda agenda = agendaRepository.ObterPor(id);
+            agenda.Status = (uint) StatusAgenda.APROVADO;
+
+            if(agendaRepository.Atualizar(agenda)){
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else{
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao reprovar pedido.",
+                    NomeView = "Dashboard",
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()
                 });
