@@ -29,6 +29,7 @@ namespace RoleTopMVC.Repositories
                     c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", linha));
                     c.Telefone = ExtrairValorDoCampo("telefone", linha);
                     c.Senha = ExtrairValorDoCampo("senha", linha);
+                    c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", linha));
 
                     return c;
                 }
@@ -37,7 +38,7 @@ namespace RoleTopMVC.Repositories
         }
 
         private string PrepararRegistroCSV (Cliente cliente){
-            return $"nome={cliente.Nome};email={cliente.Email};data_nascimento={cliente.DataNascimento};telefone={cliente.Telefone};senha={cliente.Senha}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};data_nascimento={cliente.DataNascimento};telefone={cliente.Telefone};senha={cliente.Senha}";
         }
 
         

@@ -35,4 +35,4 @@ C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Evento\Index.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Contato\Index.g.cshtml.cs
 C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Historico.g.cshtml.cs
-C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\Index.g.cshtml.cs
+C:\Users\52850852848\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\Dashboard.g.cshtml.cs

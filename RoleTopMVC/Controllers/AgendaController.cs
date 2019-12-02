@@ -1,9 +1,10 @@
 using System;
+using RoleTopMVC.Enums;
+using RoleTopMVC.Models;
+using RoleTopMVC.ViewModels;
 using RoleTopMVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using RoleTopMVC.Models;
-using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
@@ -41,7 +42,7 @@ namespace RoleTopMVC.Controllers
             };
 
             agendamento.Cliente = cliente;
-            agendamento.DataDoEvento = DateTime.Now;
+            agendamento.Agenda.DataDoEvento = DateTime.Now;
 
             ViewData["Action"] = "Agendamento";
             if(agendaRepository.Inserir(agendamento)){
@@ -63,10 +64,10 @@ namespace RoleTopMVC.Controllers
         }
 
         public IActionResult Aprovar(ulong id){
-            Agenda agenda = agendaRepository.ObterPor(id);
-            agenda.Status = (uint) StatusAgenda.APROVADO;
+            Agendamento agendamento = agendaRepository.ObterPor(id);
+            agendamento.Status = (uint) StatusAgenda.APROVADO;
 
-            if(agendaRepository.Atualizar(agenda)){
+            if(agendaRepository.Atualizar(agendamento)){
                 return RedirectToAction("Dashboard", "Administrador");
             }
             else{
@@ -80,10 +81,10 @@ namespace RoleTopMVC.Controllers
         }
 
         public IActionResult Reprovar(ulong id){
-            Agenda agenda = agendaRepository.ObterPor(id);
-            agenda.Status = (uint) StatusAgenda.APROVADO;
+            Agendamento agendamento = agendaRepository.ObterPor(id);
+            agendamento.Status = (uint) StatusAgenda.APROVADO;
 
-            if(agendaRepository.Atualizar(agenda)){
+            if(agendaRepository.Atualizar(agendamento)){
                 return RedirectToAction("Dashboard", "Administrador");
             }
             else{

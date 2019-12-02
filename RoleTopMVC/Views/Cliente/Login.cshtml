@@ -21,19 +21,19 @@
         <div>
             <label for="nome">Nome Completo</label>
             <br>
-            <input id="nome" type="text" maxlength="30" minlength="3" name="nome">
+            <input id="nome" type="text" maxlength="30" minlength="3" name="nome" required>
         </div>
 
         <div>
             <label for="email">E-mail</label>
             <br>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" required>
         </div>
 
         <div>
             <label for="data-nascimento">Data de Nascimento</label>
             <br>
-            <input id="data-nascimento" type="date" name="data-nascimento">
+            <input id="data-nascimento" type="date" name="data-nascimento" required>
         </div>
 
         <div>
@@ -45,24 +45,15 @@
         <div>
             <label for="senha">Senha</label>
             <br>
-            <input id="senha" type="password" maxlength="20" minlength="6" name="senha">
+            <input id="senha" type="password" maxlength="20" minlength="6" name="senha" required>
         </div>
 
         <div>
             <label for="senha">Confirmar Senha</label>
             <br>
-            <input id="senha" type="password" maxlength="20" minlength="6" name="confirmar-senha">
+            <input id="senha" type="password" maxlength="20" minlength="6" name="confirmar-senha" required> 
         </div>
 
         <input type="submit" value="Cadastrar">
     </form>
-
-    <div class="area-adm">
-        <h2>Área do Admnistrador</h2>
-    </div>
-    <div class="form-adm">
-    <form method="GET" action="cadastro-adm.html">
-            <input type="submit" value="Entrar">
-    </form>
-    </div>
 </main>

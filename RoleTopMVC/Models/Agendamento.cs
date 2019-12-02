@@ -8,7 +8,6 @@ namespace RoleTopMVC.Models
         public ulong Id {get; set;}
         public Cliente Cliente {get; set;}
         public Agenda Agenda {get; set;}
-        public DateTime DataDoEvento {get; set;}
         public uint Status {get; set;}
 
         public Agendamento(){

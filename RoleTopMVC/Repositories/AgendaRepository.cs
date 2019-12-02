@@ -34,15 +34,37 @@ namespace RoleTopMVC.Repositories
                 agenda.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 agenda.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 agenda.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
-                agenda.DataDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
+                agenda.Agenda.DataDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
                 agenda.Agenda.Tipo = ExtrairValorDoCampo("tipo_evento", linha);
-                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha);
+                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha); //TODO O ERRO É AQUI É AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
                 agenda.Agenda.TipoPessoa = ExtrairValorDoCampo("tipo_pessoa", linha);
                 agenda.Agenda.CPF = ExtrairValorDoCampo("cliente_cpf", linha);
                 agenda.Agenda.Descricao = ExtrairValorDoCampo("descricao_evento", linha);
                 agenda.Agenda.Servicos = ExtrairValorDoCampo("servicos", linha);
                 agenda.Agenda.Pagamento = ExtrairValorDoCampo("forma_pagamento", linha);
                 agenda.Status = uint.Parse(ExtrairValorDoCampo("status_agendamento", linha));
+                System.Console.WriteLine();
+                                System.Console.WriteLine();
+                                                System.Console.WriteLine();
+                                                                System.Console.WriteLine();
+                                                                                System.Console.WriteLine();
+                                                                                                System.Console.WriteLine();
+                                                                                                                System.Console.WriteLine();
+                                                                                                                                System.Console.WriteLine();
+                                                                                                                                                System.Console.WriteLine();
+
+                                                                                                                                                                System.Console.WriteLine();
+                                                                                                                                                                                System.Console.WriteLine();
+                                                                                                                                                                                                System.Console.WriteLine();
+                System.Console.WriteLine(ExtrairValorDoCampo("evento", linha)); //TODO EU ADICIONEI ISSO AQUI
+
+                System.Console.WriteLine();
+                                System.Console.WriteLine();                System.Console.WriteLine();                System.Console.WriteLine();
+
+                                                System.Console.WriteLine();
+                                                                System.Console.WriteLine();
+                                                                                System.Console.WriteLine();
+                                                                                                System.Console.WriteLine();
 
                 agendas.Add(agenda);
             }
@@ -54,6 +76,7 @@ namespace RoleTopMVC.Repositories
             List<Agendamento> agendarCliente = new List<Agendamento>();
             foreach (var agenda in agendarTotais){
                 if(agenda.Cliente.Email.Equals(email)){
+                    //System.Console.WriteLine(agenda.Agenda.Evento); //TODO EU ADICIONEI ISSO AQUI O ERRO TA AQUI OU ANTES
                     agendarCliente.Add(agenda);
                 }
             }

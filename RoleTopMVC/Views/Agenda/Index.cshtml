@@ -4,13 +4,13 @@
         <div>
             <label for="nome">Nome Completo</label>
             <br>
-            <input id="nome" type="text" maxlength="30" minlength="3" name="nome">
+            <input id="nome" type="text" maxlength="30" minlength="3" name="nome" required>
         </div>
 
         <div>
             <label for="email">E-mail</label>
             <br>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" >
         </div>
 
         <div>
@@ -22,7 +22,7 @@
         <div >
             <label for="data">Data</label>
             <br>
-            <input id="data" type="date" name="data">
+            <input id="data" type="date" name="data" required>
         </div>
 
         <div>
@@ -44,7 +44,7 @@
             <div>
                 <label for="evento">Evento</label>
                 <br>
-                <select id="evento" name="evento">
+                <select id="evento" name="evento" required>
                     <option value="" disabled selected>Selecione</option>
                     <option>Casamento</option>
                     <option>Formatura</option>
@@ -57,7 +57,7 @@
             <div>
                 <label for="pf-pj">Pessoa física ou jurídica</label>
                 <br>
-                <select id="pf-pj" name="pf-pj" required>
+                <select id="pf-pj" name="pf-pj">
                     <option value="" disabled selected>Selecione</option>
                     <option>Pessoa Física</option>
                     <option>Pessoa Jurídica</option>
@@ -68,13 +68,13 @@
         <div>
             <label for="cpf">CPF ou CNPJ</label>
             <br>
-            <input id="cpf" type="text" placeholder="Ex:123-456-789-0" name="cpf">
+            <input id="cpf" type="text" placeholder="Ex:123-456-789-0" name="cpf" required>
         </div>
 
         <div>
             <label for="descricao">Descrição do Evento</label>
             <br>
-            <textarea cols="60" rows="7" placeholder="Ex: número de convidados, atrações, descrição do evento, etc." name="descricao"></textarea>
+            <textarea cols="60" rows="7" placeholder="Ex: número de convidados, atrações, descrição do evento, etc." name="descricao" required></textarea>
         </div>
 
         <div class="box-servicos">
@@ -87,7 +87,7 @@
         <div>
             <label for="pagamento">Forma de pagamento</label>
             <br>
-            <input id="pagamento" type="text" name="pagamento">
+            <input id="pagamento" type="text" name="pagamento" required>
         </div>
 
         <div>

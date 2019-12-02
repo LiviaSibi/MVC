@@ -29,11 +29,15 @@ namespace RoleTopMVC.Controllers
                         dashboardViewModel.Agendamentos.Add(agenda);
                         break;
                 }
-            }
-            dashboardViewModel.NomeView = "Dashboard";
-            dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
+                dashboardViewModel.NomeView = "Dashboard";
+                dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
 
-            return View(dashboardViewModel);
+                return View(dashboardViewModel);
+            }
+            return View("Erro", new RespostaViewModel(){
+                NomeView = "Dashboard",
+                Mensagem = "Você não pode acessar essa parte do site."
+            });
         }
     }
 }

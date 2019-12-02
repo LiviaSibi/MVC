@@ -17,13 +17,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var evento in Model.Agendar) {
+            @foreach(var agenda in Model.Agendar) {
                 <tr>
-                    <td>@evento.DataDoEvento</td>
-                    <td>@evento.Agenda.Tipo</td>
-                    <td>@evento.Agenda.Evento</td>
-                    <td>@evento.Agenda.Descricao</td>
-                    <td>@evento.Agenda.Servicos</td>
+                    <td>@agenda.Agenda.DataDoEvento</td>
+                    <td>@agenda.Agenda.Tipo</td>
+                    <td>@agenda.Agenda.Evento</td>
+                    <td>@agenda.Agenda.Descricao</td>
+                    <td>@agenda.Agenda.Servicos</td>
                 </tr> 
             }
         </tbody>

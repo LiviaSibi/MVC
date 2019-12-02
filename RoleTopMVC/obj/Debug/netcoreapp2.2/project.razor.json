@@ -3011,8 +3011,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\52850852848\\Documents\\MVC\\RoleTopMVC\\Views\\Administrador\\Index.cshtml",
-      "TargetPath": "Views\\Administrador\\Index.cshtml",
+      "FilePath": "c:\\Users\\52850852848\\Documents\\MVC\\RoleTopMVC\\Views\\Administrador\\Dashboard.cshtml",
+      "TargetPath": "Views\\Administrador\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {
