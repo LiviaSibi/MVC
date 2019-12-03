@@ -34,37 +34,16 @@ namespace RoleTopMVC.Repositories
                 agenda.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 agenda.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 agenda.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
-                agenda.Agenda.DataDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
-                agenda.Agenda.Tipo = ExtrairValorDoCampo("tipo_evento", linha);
-                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha); //TODO O ERRO É AQUI É AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                agenda.Agenda.TipoPessoa = ExtrairValorDoCampo("tipo_pessoa", linha);
+                agenda.Agenda.DataHora = DateTime.Parse(ExtrairValorDoCampo("data_hora", linha));
+                agenda.Agenda.Tipo = ExtrairValorDoCampo("tipo", linha);
+                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha);        //TODO O ERRO É AQUI
+                agenda.Agenda.TipoPessoa = ExtrairValorDoCampo("pessoa", linha);
                 agenda.Agenda.CPF = ExtrairValorDoCampo("cliente_cpf", linha);
                 agenda.Agenda.Descricao = ExtrairValorDoCampo("descricao_evento", linha);
                 agenda.Agenda.Servicos = ExtrairValorDoCampo("servicos", linha);
                 agenda.Agenda.Pagamento = ExtrairValorDoCampo("forma_pagamento", linha);
                 agenda.Status = uint.Parse(ExtrairValorDoCampo("status_agendamento", linha));
                 System.Console.WriteLine();
-                                System.Console.WriteLine();
-                                                System.Console.WriteLine();
-                                                                System.Console.WriteLine();
-                                                                                System.Console.WriteLine();
-                                                                                                System.Console.WriteLine();
-                                                                                                                System.Console.WriteLine();
-                                                                                                                                System.Console.WriteLine();
-                                                                                                                                                System.Console.WriteLine();
-
-                                                                                                                                                                System.Console.WriteLine();
-                                                                                                                                                                                System.Console.WriteLine();
-                                                                                                                                                                                                System.Console.WriteLine();
-                System.Console.WriteLine(ExtrairValorDoCampo("evento", linha)); //TODO EU ADICIONEI ISSO AQUI
-
-                System.Console.WriteLine();
-                                System.Console.WriteLine();                System.Console.WriteLine();                System.Console.WriteLine();
-
-                                                System.Console.WriteLine();
-                                                                System.Console.WriteLine();
-                                                                                System.Console.WriteLine();
-                                                                                                System.Console.WriteLine();
 
                 agendas.Add(agenda);
             }
@@ -72,11 +51,10 @@ namespace RoleTopMVC.Repositories
         }
 
         public List<Agendamento> ObterTodosPorCliente(string email){
-            var agendarTotais = ObterTodos();
+            var TotalAgenda = ObterTodos();
             List<Agendamento> agendarCliente = new List<Agendamento>();
-            foreach (var agenda in agendarTotais){
+            foreach (var agenda in TotalAgenda){
                 if(agenda.Cliente.Email.Equals(email)){
-                    //System.Console.WriteLine(agenda.Agenda.Evento); //TODO EU ADICIONEI ISSO AQUI O ERRO TA AQUI OU ANTES
                     agendarCliente.Add(agenda);
                 }
             }
@@ -119,7 +97,7 @@ namespace RoleTopMVC.Repositories
         private string PrepararRegistroCSV(Agendamento agendamento){
             Cliente cliente = agendamento.Cliente;
             Agenda agenda = agendamento.Agenda;
-            return $"id={agendamento.Id};cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_evento={agenda.DataDoEvento};tipo_evento={agenda.Tipo};evento={agenda.Evento};tipo_pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento};status_agendamento={agendamento.Status}";
+            return $"id={agendamento.Id};cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_hora={agenda.DataHora};tipo={agenda.Tipo};evento={agenda.Evento};pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento};status_agendamento={agendamento.Status}";
         }
     }
 }

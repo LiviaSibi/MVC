@@ -5,7 +5,7 @@ namespace RoleTopMVC.Models
     public class Agenda
     {
         public Cliente Cliente {get; set;}
-        public DateTime DataDoEvento {get; set;}
+        public DateTime DataHora {get; set;}
         public string Tipo {get; set;}
         public string Evento {get; set;}
         public string TipoPessoa {get; set;}
@@ -19,7 +19,7 @@ namespace RoleTopMVC.Models
         }
 
         public Agenda(DateTime data, string tipo, string evento, string pessoa, string cpf, string descricao, string servicos, string pagamento){
-            this.DataDoEvento = data;
+            this.DataHora = data;
             this.Tipo = tipo;
             this.Evento = evento;
             this.TipoPessoa = pessoa;

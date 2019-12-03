@@ -54,16 +54,6 @@ h4 {
     background-color: #FFD133;
 }
 
-.box-status-aluguel.feitos {
-    background-color: #A800C6;
-    border-right: 1px solid #000;
-}
-
-.box-status-aluguel.a-serem-feitos {
-    background-color: #A800C6;
-    border-left: 1px solid #000;
-}
-
 table {
     text-align: left;
     color: #000;

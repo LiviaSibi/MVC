@@ -11,28 +11,32 @@ namespace RoleTopMVC.Controllers
 
         [HttpGet]
         public IActionResult DashBoard(){
-            var agendas = agendaRepository.ObterTodos();
-            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            var tipoUsusarioSessao = uint.Parse(ObterUsuarioTipoSession());
+            if(tipoUsusarioSessao.Equals((uint) TiposUsuario.ADMINISTRADOR)){
+                var agendas = agendaRepository.ObterTodos();
+                DashboardViewModel dashboardViewModel = new DashboardViewModel();
 
-            foreach(var agenda in agendas){
-                switch (agenda.Status){
-                    case (uint) StatusAgenda.REPROVADO:
-                        dashboardViewModel.AgendamentoReprovado++;
-                        break;
+                foreach(var agenda in agendas){
+                    switch (agenda.Status){
+                        case (uint) StatusAgenda.REPROVADO:
+                            dashboardViewModel.AgendamentoReprovado++;
+                            break;
 
-                    case (uint) StatusAgenda.APROVADO:
-                        dashboardViewModel.AgendamentoAprovado++;
-                        break;
+                        case (uint) StatusAgenda.APROVADO:
+                            dashboardViewModel.AgendamentoAprovado++;
+                            break;
 
-                    default:
-                        dashboardViewModel.AgendamentoPendente++;
-                        dashboardViewModel.Agendamentos.Add(agenda);
-                        break;
+                        default:
+                            dashboardViewModel.AgendamentoPendente++;
+                            dashboardViewModel.Agendamentos.Add(agenda);
+                            break;
+                    }
+
                 }
                 dashboardViewModel.NomeView = "Dashboard";
                 dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
-
                 return View(dashboardViewModel);
+
             }
             return View("Erro", new RespostaViewModel(){
                 NomeView = "Dashboard",

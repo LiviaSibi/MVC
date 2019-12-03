@@ -10,7 +10,7 @@
         <div>
             <label for="email">E-mail</label>
             <br>
-            <input id="email" type="email" name="email" >
+            <input id="email" type="email" name="email" required>
         </div>
 
         <div>
@@ -28,7 +28,7 @@
         <div>
             <label for="hora">Horário</label>
             <br>
-            <input id="hora" type="time" name="horario">
+            <input id="hora" type="time" name="horario" required>
         </div>
 
         <div class="double-field">
@@ -74,14 +74,18 @@
         <div>
             <label for="descricao">Descrição do Evento</label>
             <br>
-            <textarea cols="60" rows="7" placeholder="Ex: número de convidados, atrações, descrição do evento, etc." name="descricao" required></textarea>
+            <textarea cols="60" rows="7" placeholder="Ex: número de convidados, atrações, descrição do evento, etc." name="descricao" maxlength="85" required></textarea>
         </div>
 
         <div class="box-servicos">
-            <label id="servicos" for="servicos">Serviços a disposição (opcional)</label>
+            <label for="servicos">Serviços a disposição (opcional)</label>
             <br>
-            <input id="servicos-som" type="checkbox" value="som" name="servicos">Som<br>
-            <input id="servicos-luz" type="checkbox" value="iluminação" name="servicos">Iluminação<br>
+            <select id="servicos" name="servicos">
+                <option value="" disabled selected>Selecione</option>
+                <option>Som</option>
+                <option>Iluminação</option>
+                <option>Som e Iluminação</option>
+            </select>
         </div>
 
         <div>
@@ -95,7 +99,7 @@
         </div>
 
         <div>
-            <input id="servicos-condicoes" type="checkbox" required>Concordo e aceito os serviços e condições da empresa (Ler)<br>
+            <input id="servicos-condicoes" type="checkbox" required checked>Concordo e aceito os serviços e condições da empresa (Ler)<br>
         </div>
 
         <p><a href="">Imprimir Boleto</a></p>

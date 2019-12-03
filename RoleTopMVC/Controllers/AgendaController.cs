@@ -32,7 +32,7 @@ namespace RoleTopMVC.Controllers
         public IActionResult Agendar(IFormCollection form){
             Agendamento agendamento = new Agendamento();
 
-            Agenda agenda = new Agenda (DateTime.Parse(form["data"]+" "+form["horario"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["sevicos"], form["pagamento"]);
+            Agenda agenda = new Agenda (DateTime.Parse(form["data"]+" "+form["horario"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["servicos"], form["pagamento"]);
             agendamento.Agenda = agenda;
 
             Cliente cliente = new Cliente(){
@@ -42,7 +42,7 @@ namespace RoleTopMVC.Controllers
             };
 
             agendamento.Cliente = cliente;
-            agendamento.Agenda.DataDoEvento = DateTime.Now;
+            agendamento.Agenda.DataHora = DateTime.Now;
 
             ViewData["Action"] = "Agendamento";
             if(agendaRepository.Inserir(agendamento)){
@@ -82,7 +82,7 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult Reprovar(ulong id){
             Agendamento agendamento = agendaRepository.ObterPor(id);
-            agendamento.Status = (uint) StatusAgenda.APROVADO;
+            agendamento.Status = (uint) StatusAgenda.REPROVADO;
 
             if(agendaRepository.Atualizar(agendamento)){
                 return RedirectToAction("Dashboard", "Administrador");
