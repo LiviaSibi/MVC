@@ -5,7 +5,7 @@ body {
 main {
     align-self: center;
     width: 40%;
-    padding: 0 0 0 47em;
+    padding: 0 0 0 45em;
 }
 
 .flex-container {
@@ -102,7 +102,7 @@ form input[type="submit"] {
     height: 2em;
     border-radius: 4px;
     text-align: center;
-    margin: 0 0 1em 0;
+    margin: 0 0 2em 0;
 }
 
 form input[type="submit"]:hover {

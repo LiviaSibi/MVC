@@ -66,13 +66,20 @@
                         @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
                         {
                             <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Agenda" asp-action="Index">Agende Já!</a></li>
+                        }
+                        else if (@Model.UsuarioEmail == "admin@email.com")
+                        {
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Administrador" asp-action="Dashboard">Dashboard</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Administrador" asp-action="Historico">Histórico</a></li>
                         }
                         else
                         {
                             <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
                             <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Histórico">Agendamentos</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Agenda" asp-action="Index">Agende Já!</a></li>
                         }
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Agenda" asp-action="Index">Agende Já!</a></li>
                     </ul>
                 </nav>
             </div>

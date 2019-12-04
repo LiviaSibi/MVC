@@ -2,6 +2,7 @@ using RoleTopMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.Enums;
+using System;
 
 namespace RoleTopMVC.Controllers
 {
@@ -33,6 +34,25 @@ namespace RoleTopMVC.Controllers
                     }
 
                 }
+                dashboardViewModel.NomeView = "Dashboard";
+                dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
+                return View(dashboardViewModel);
+
+            }
+            return View("Erro", new RespostaViewModel(){
+                NomeView = "Dashboard",
+                Mensagem = "Você não pode acessar essa parte do site."
+            });
+        }
+
+        public IActionResult Historico (){
+            var tipoUsusarioSessao = uint.Parse(ObterUsuarioTipoSession());
+            if(tipoUsusarioSessao.Equals((uint) TiposUsuario.ADMINISTRADOR)){
+                var agendamentos = agendaRepository.ObterTodos();
+                DashboardViewModel dashboardViewModel = new DashboardViewModel(){
+                    Agendamentos = agendamentos
+                };
+
                 dashboardViewModel.NomeView = "Dashboard";
                 dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
                 return View(dashboardViewModel);

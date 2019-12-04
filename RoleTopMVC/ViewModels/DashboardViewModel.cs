@@ -13,5 +13,7 @@ namespace RoleTopMVC.ViewModels
         public DashboardViewModel(){
             this.Agendamentos = new List<Agendamento>();
         }
+
+        
     }
 }

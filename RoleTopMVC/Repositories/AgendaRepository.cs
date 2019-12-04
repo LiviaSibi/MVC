@@ -36,7 +36,7 @@ namespace RoleTopMVC.Repositories
                 agenda.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
                 agenda.Agenda.DataHora = DateTime.Parse(ExtrairValorDoCampo("data_hora", linha));
                 agenda.Agenda.Tipo = ExtrairValorDoCampo("tipo", linha);
-                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha);        //TODO O ERRO É AQUI
+                agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha);
                 agenda.Agenda.TipoPessoa = ExtrairValorDoCampo("pessoa", linha);
                 agenda.Agenda.CPF = ExtrairValorDoCampo("cliente_cpf", linha);
                 agenda.Agenda.Descricao = ExtrairValorDoCampo("descricao_evento", linha);
