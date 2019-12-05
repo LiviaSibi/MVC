@@ -14,6 +14,7 @@
                 <th>Evento</th>
                 <th>Descrição</th>
                 <th>Serviços</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,18 @@
                     <td>@agenda.Agenda.Evento</td>
                     <td>@agenda.Agenda.Descricao</td>
                     <td>@agenda.Agenda.Servicos</td>
+                    @if(@agenda.Status == 0)
+                        {
+                            <td>Pendente</td>
+                        }
+                        else if (@agenda.Status == 1)
+                        {
+                            <td>Aprovado</td>
+                        }
+                        else if (@agenda.Status == 2)
+                        {
+                            <td>Reprovado</td>
+                        }
                 </tr> 
             }
         </tbody>

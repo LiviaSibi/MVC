@@ -166,10 +166,6 @@ select {
     padding: 2px 4px;
 }
 
-.box-servicos label {
-    border-bottom: 2px solid #000;
-}
-
 form input#pagamento {
     width: 33%;
     height: 25px;
@@ -178,10 +174,10 @@ form input#pagamento {
     padding: 0 2px;
 }
 
-form input#total{
+form label#total{
     width: 33%;
-    height: 25px;
-    color: #000;
+    height: 30px;
+    color: #ffcc00;
 }
 
 form input#servicos-condicoes {

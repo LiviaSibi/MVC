@@ -1,4 +1,5 @@
 using System;
+using RoleTopMVC.Enums;
 
 namespace RoleTopMVC.Models
 {
@@ -21,6 +22,7 @@ namespace RoleTopMVC.Models
             this.DataNascimento = dataNascimento; 
             this.Telefone = Telefone;
             this.Senha = Senha;
+            this.TipoUsuario = (uint) TiposUsuario.CLIENTE;
         }
     }
 }

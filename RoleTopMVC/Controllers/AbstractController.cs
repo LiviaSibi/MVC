@@ -1,5 +1,7 @@
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Enums;
 
 namespace RoleTopMVC.Controllers
 {
@@ -8,7 +10,6 @@ namespace RoleTopMVC.Controllers
         protected const string SESSION_CLIENTE_EMAIL = "email_cliente";
         protected const string SESSION_CLIENTE_NOME = "cliente_nome";
         protected const string SESSION_TIPO_USUARIO = "tipo_usuario";
-
 
         protected string ObterUsuarioSession(){
             var email = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);

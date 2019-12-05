@@ -85,7 +85,7 @@ table a:hover {
 tfoot td {
     text-align: center;
     background-color: #A800C6;
-
+    color: #ffc600;
 }
 
 @media (max-width:800px) {
