@@ -84,16 +84,19 @@ namespace RoleTopMVC.Controllers
         public IActionResult CadastrarCliente(IFormCollection form){
             ViewData ["Action"] = "Cadastro";
             try{
-                Cliente cliente = new Cliente(
-                form["nome"], 
-                form["email"],
-                DateTime.Parse(form["data-nascimento"]), 
-                form["telefone"],
-                form["senha"]);
-                
-                clienteRepository.Inserir(cliente);
+                if(form["senha"] == form["confirmar-senha"]){
+                    Cliente cliente = new Cliente(
+                    form["nome"], 
+                    form["email"],
+                    DateTime.Parse(form["data-nascimento"]), 
+                    form["telefone"],
+                    form["senha"]);
+                    
+                    clienteRepository.Inserir(cliente);
 
-                return View("Sucesso", new RespostaViewModel(" "));
+                    return View("Sucesso", new RespostaViewModel(" "));
+                }
+                return View("Erro", new RespostaViewModel("As senhas não são iguais"));
             }
 
             catch(Exception e){
