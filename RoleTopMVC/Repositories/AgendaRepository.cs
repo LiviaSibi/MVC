@@ -95,9 +95,7 @@ namespace RoleTopMVC.Repositories
         }
 
         private string PrepararRegistroCSV(Agendamento agendamento){
-            Cliente cliente = agendamento.Cliente;
-            Agenda agenda = agendamento.Agenda;
-            return $"id={agendamento.Id};cliente_nome={cliente.Nome};cliente_email={cliente.Email};cliente_telefone={cliente.Telefone};data_hora={agenda.DataHora};tipo={agenda.Tipo};evento={agenda.Evento};pessoa={agenda.TipoPessoa};cliente_cpf={agenda.CPF};descricao_evento={agenda.Descricao};servicos={agenda.Servicos};forma_pagamento={agenda.Pagamento};status_agendamento={agendamento.Status}";
+            return $"id={agendamento.Id};cliente_nome={agendamento.Cliente.Nome};cliente_email={agendamento.Cliente.Email};cliente_telefone={agendamento.Cliente.Telefone};data_hora={agendamento.Agenda.DataHora};tipo={agendamento.Agenda.Tipo};evento={agendamento.Agenda.Evento};pessoa={agendamento.Agenda.TipoPessoa};cliente_cpf={agendamento.Agenda.CPF};descricao_evento={agendamento.Agenda.Descricao};servicos={agendamento.Agenda.Servicos};forma_pagamento={agendamento.Agenda.Pagamento};status_agendamento={agendamento.Status}";
         }
     }
 }

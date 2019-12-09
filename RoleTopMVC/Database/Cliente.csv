@@ -4,3 +4,4 @@ tipo_usuario=1;nome=Fulano da Silva;email=fulano@gmail.com;data_nascimento=11/10
 tipo_usuario=1;nome=Jorge;email=jorge@email.com;data_nascimento=12/06/1996 00:00:00;telefone=11 1234-5678;senha=987654
 tipo_usuario=1;nome=João Teixeira;email=joao@joao.joao;data_nascimento=03/11/1999 00:00:00;telefone=44444444400;senha=123456789
 tipo_usuario=1;nome=Cleberson Caneta ;email=cleb@cleberson.com;data_nascimento=15/07/1936 00:00:00;telefone=1198015925;senha=123456
+tipo_usuario=1;nome=Luan da Silva;email=luan@email.com;data_nascimento=12/02/2019 00:00:00;telefone=11 912345678;senha=123456
