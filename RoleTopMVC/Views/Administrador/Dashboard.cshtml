@@ -29,6 +29,7 @@
                     <th>E-mail</th>
                     <th>Tipo de Evento</th>
                     <th>Evento</th>
+                    <th>Nº Convidados</th>
                     <th>Data e Hora</th>
                     <th>Descrição</th>
                     <th colspan="2">Aceitar/Negar</th>
@@ -36,7 +37,7 @@
             </thead>
             <tfoot>
                 <tr>
-                    <td colspan="8">
+                    <td colspan="9">
                         <p>Atualizado em @DateTime.Now</p>
                         <a asp-controller="Administrador" asp-action="Historico"><p>Visualizar lista de eventos geral</p></a>
                     </td>
@@ -50,6 +51,7 @@
                         <td>@agenda.Cliente.Email</td>
                         <td>@agenda.Agenda.Tipo</td>
                         <td>@agenda.Agenda.Evento</td>
+                        <td>@agenda.Agenda.Convidados</td>
                         <td>@agenda.Agenda.DataHora</td>
                         <td>@agenda.Agenda.Descricao</td>
                         <td><a href='@Url.Action("Aprovar", "Agenda", new {id = @agenda.Id})'><i class="fas fa-check"></i></a></td>

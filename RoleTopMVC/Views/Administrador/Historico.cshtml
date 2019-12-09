@@ -10,6 +10,7 @@
                     <th>E-mail</th>
                     <th>Tipo de Evento</th>
                     <th>Evento</th>
+                    <th>Nº Convidados</th>
                     <th>Data e Hora</th>
                     <th>Descrição</th>
                     <th>Status do Pedido</th>
@@ -17,7 +18,7 @@
             </thead>
             <tfoot>
                 <tr>
-                    <td colspan="7">
+                    <td colspan="9">
                         <p>Atualizado em @DateTime.Now</p>
                     </td>
                 </tr>
@@ -30,6 +31,7 @@
                         <td>@agenda.Cliente.Email</td>
                         <td>@agenda.Agenda.Tipo</td>
                         <td>@agenda.Agenda.Evento</td>
+                        <td>@agenda.Agenda.Convidados</td>
                         <td>@agenda.Agenda.DataHora</td>
                         <td>@agenda.Agenda.Descricao</td>
                         @if(@agenda.Status == 0)

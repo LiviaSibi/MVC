@@ -114,6 +114,14 @@ form input[type="submit"]:hover {
     font-weight: bolder;
 }
 
+form input#convidados {
+    width: 30%;
+    height: 26px;
+    border: none;
+    text-align: left;
+    padding: 0 2px;
+}
+
 form input#data {
     height: 27px;
     border: none;

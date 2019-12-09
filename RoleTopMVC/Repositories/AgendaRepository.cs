@@ -39,6 +39,7 @@ namespace RoleTopMVC.Repositories
                 agenda.Agenda.Evento = ExtrairValorDoCampo("evento", linha);
                 agenda.Agenda.TipoPessoa = ExtrairValorDoCampo("pessoa", linha);
                 agenda.Agenda.CPF = ExtrairValorDoCampo("cliente_cpf", linha);
+                agenda.Agenda.Convidados = ExtrairValorDoCampo("convidados", linha);
                 agenda.Agenda.Descricao = ExtrairValorDoCampo("descricao_evento", linha);
                 agenda.Agenda.Servicos = ExtrairValorDoCampo("servicos", linha);
                 agenda.Agenda.Pagamento = ExtrairValorDoCampo("forma_pagamento", linha);
@@ -95,7 +96,7 @@ namespace RoleTopMVC.Repositories
         }
 
         private string PrepararRegistroCSV(Agendamento agendamento){
-            return $"id={agendamento.Id};cliente_nome={agendamento.Cliente.Nome};cliente_email={agendamento.Cliente.Email};cliente_telefone={agendamento.Cliente.Telefone};data_hora={agendamento.Agenda.DataHora};tipo={agendamento.Agenda.Tipo};evento={agendamento.Agenda.Evento};pessoa={agendamento.Agenda.TipoPessoa};cliente_cpf={agendamento.Agenda.CPF};descricao_evento={agendamento.Agenda.Descricao};servicos={agendamento.Agenda.Servicos};forma_pagamento={agendamento.Agenda.Pagamento};status_agendamento={agendamento.Status}";
+            return $"id={agendamento.Id};cliente_nome={agendamento.Cliente.Nome};cliente_email={agendamento.Cliente.Email};cliente_telefone={agendamento.Cliente.Telefone};data_hora={agendamento.Agenda.DataHora};tipo={agendamento.Agenda.Tipo};evento={agendamento.Agenda.Evento};pessoa={agendamento.Agenda.TipoPessoa};cliente_cpf={agendamento.Agenda.CPF};convidados={agendamento.Agenda.Convidados};descricao_evento={agendamento.Agenda.Descricao};servicos={agendamento.Agenda.Servicos};forma_pagamento={agendamento.Agenda.Pagamento};status_agendamento={agendamento.Status}";
         }
     }
 }

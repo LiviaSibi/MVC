@@ -36,7 +36,7 @@ namespace RoleTopMVC.Controllers
         public IActionResult Agendar(IFormCollection form){
             Agendamento agendamento = new Agendamento();
 
-            Agenda agenda = new Agenda (DateTime.Parse(form["data"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["descricao"], form["servicos"], form["pagamento"]);
+            Agenda agenda = new Agenda (DateTime.Parse(form["data"]), form["tipo-evento"], form["evento"], form["pf-pj"], form["cpf"], form["convidados"], form["descricao"], form["servicos"], form["pagamento"]);
             agendamento.Agenda = agenda;
             
             Cliente cliente = clienteRepository.ObterPor(ObterUsuarioSession());
