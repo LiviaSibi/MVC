@@ -18,6 +18,10 @@ namespace RoleTopMVC.Controllers
 
             var usuarioLogado = ObterUsuarioSession();
             var nomeUsuarioLogado = ObterUsuarioNomeSession();
+        
+            if(!string.IsNullOrEmpty(nomeUsuarioLogado)){
+                agenda.NomeUsuario = nomeUsuarioLogado;
+            }
             
             var clienteLogado = clienteRepository.ObterPor(usuarioLogado);
             if(clienteLogado != null){

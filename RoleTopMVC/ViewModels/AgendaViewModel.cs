@@ -5,11 +5,13 @@ namespace RoleTopMVC.ViewModels
     public class AgendaViewModel : BaseViewModel
     {
         public Cliente Cliente {get; set;}
-        public Agenda Agenda {get; set;}
+        public Agenda Agenda {get; set;}        
+        public string NomeUsuario {get; set;}
 
         public AgendaViewModel(){
             this.Cliente = new Cliente();
             this.Agenda = new Agenda();
+            this.NomeUsuario = "Jovem";
         }
     }
 }
