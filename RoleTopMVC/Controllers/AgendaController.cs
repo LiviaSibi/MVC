@@ -43,8 +43,20 @@ namespace RoleTopMVC.Controllers
 
             agendamento.Cliente = cliente;
             agendamento.Agenda.DataHora = DateTime.Now;
+            var usuarioLogado = ObterUsuarioSession();
+            
+            var clienteLogado = clienteRepository.ObterPor(usuarioLogado);
 
             ViewData["Action"] = "Agendamento";
+            if(clienteLogado == null){
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Sua sessão expirou ou você não está logado. Logue para Agendar",
+                    NomeView = "Erro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+
             if(agendaRepository.Inserir(agendamento)){
                 return View("Sucesso", new RespostaViewModel(){
                     Mensagem = "Aguarde a aprovação dos nossos administradores",

@@ -62,8 +62,9 @@ namespace RoleTopMVC.Controllers
             catch(Exception e){
                 System.Console.WriteLine(e.StackTrace);
                 return View("Erro", new RespostaViewModel(" "));
-            } 
+            }
         }
+
         public IActionResult Historico(){
             var emailCliente = ObterUsuarioSession();
             var agendar = agendaRepository.ObterTodosPorCliente(emailCliente);
@@ -75,12 +76,14 @@ namespace RoleTopMVC.Controllers
                 UsuarioEmail = ObterUsuarioSession()
             });
         }
+
         public IActionResult Logoff(){
             HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
             HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
+
         public IActionResult CadastrarCliente(IFormCollection form){
             ViewData ["Action"] = "Cadastro";
             try{
